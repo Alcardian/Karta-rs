@@ -188,7 +188,7 @@ impl eframe::App for KartaApp {
         ui.label(RichText::new("Log").strong());
         ui.add_space(4.0);
 
-        ScrollArea::vertical().auto_shrink([false; 2]).show(ui, |ui| {
+        ScrollArea::vertical().auto_shrink([false; 2]).stick_to_bottom(true).show(ui, |ui| {
           for line in &self.log_lines {
             ui.monospace(line);
           }
