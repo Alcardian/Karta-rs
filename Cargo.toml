@@ -1,0 +1,28 @@
+[package]
+name = "karta-rs"
+version = "1.0.0-SNAPSHOT"
+edition = "2021"
+authors = ["Alcardian"]
+description = "Clipboard listener with GUI that logs /jumploc entries to CSV"
+license = "MIT"
+
+[dependencies]
+# GUI framework
+eframe = { version = "0.27", features = ["wgpu"] }
+
+# Clipboard access (cross-platform)
+arboard = "3"
+
+# Timestamped filenames
+chrono = "0.4"
+
+# For inter-thread channels (std is fine, we keep it simple)
+# (No extra crate needed)
+
+# Optional: nicer errors (not strictly required)
+thiserror = "1"
+
+[profile.release]
+lto = true
+opt-level = "z"
+codegen-units = 1

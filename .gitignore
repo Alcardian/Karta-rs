@@ -1,0 +1,6 @@
+# Intellij
+.idea
+
+# Ignore target directory and test files.
+target/
+.csv

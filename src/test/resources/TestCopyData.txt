@@ -1,0 +1,3 @@
+/jumploc 2928.40 509.95 2421.73 271
+2928.40 509.95 2421.73 271
+Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
