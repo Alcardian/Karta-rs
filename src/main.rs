@@ -19,7 +19,7 @@ use std::{
 /// CSV format constants
 const FILE_PREFIX: &str = "data_";
 const FILE_EXTENSION: &str = ".csv";
-const FILE_HEADER_ROW: &str = "Pantheon,X,Z,Y, Comment\n";
+const FILE_HEADER_ROW: &str = "X,Z,Y, Comment\n";
 
 const DEFAULT_INTERVAL_MS: u64 = 1000;
 const LOG_MAX_LINES: usize = 500;
@@ -302,12 +302,14 @@ fn worker_loop(
             last_clipboard = current.clone();
 
             if current.contains("/jumploc") {
+              let cleaned = current.replace("/jumploc", "").trim().to_string();
+
               let comment = match pending_comment.lock() {
                 Ok(mut pending_comment) => std::mem::take(&mut *pending_comment),
                 Err(_) => String::new(),
               };
 
-              let formatted = format_csv_row(&current, &comment);
+              let formatted = format_csv_row(&cleaned, &comment);
 
               if let Err(e) = append_line(&data_file, &formatted) {
                 let _ = tx.send(AppEvent::Error(format!("Failed writing to CSV: {e}")));
