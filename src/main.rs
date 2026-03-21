@@ -19,7 +19,7 @@ use std::{
 /// CSV format constants
 const FILE_PREFIX: &str = "data_";
 const FILE_EXTENSION: &str = ".csv";
-const FILE_HEADER_ROW: &str = "X,Z,Y, Comment\n";
+const FILE_HEADER_ROW: &str = "X,Z,Y,Direction,Comment\n";
 
 const DEFAULT_INTERVAL_MS: u64 = 1000;
 const LOG_MAX_LINES: usize = 500;
