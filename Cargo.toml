@@ -1,6 +1,6 @@
 [package]
 name = "karta-rs"
-version = "1.0.0"
+version = "1.1.0-SNAPSHOT"
 edition = "2021"
 authors = ["Alcardian"]
 description = "Clipboard listener with GUI that logs /jumploc entries to CSV"
