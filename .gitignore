@@ -1,6 +1,11 @@
-# Intellij
-.idea
+# Code Editors
+.idea/
+.vscode/
 
 # Ignore target directory and test files.
 target/
-.csv
+*.csv
+
+# OS-specific files
+.DS_Store
+Thumbs.db
